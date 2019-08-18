@@ -3,3 +3,14 @@ body {
     background-size: cover;
 }
 
+div.header h1 {
+    color: white;
+    font-size: 3.75rem;
+    text-align: center;
+}
+
+div.header h2 {
+    color: white;
+    font-size: 1.75rem;
+    text-align: center;
+}

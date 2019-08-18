@@ -1,4 +1,5 @@
 var express = require("express");
+var exphbs = require("express-handlebars");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
@@ -26,13 +27,27 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
+// Handlebars
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main"
+  })
+);
+app.set("view engine", "handlebars");
+
 // Connect to the Mongo DB
 mongoose.connect("mongodb://localhost/dailybeastpopulater", { useNewUrlParser: true });
 
 // Routes
 app.get("/", function(req, res){
   res.render("index");
-})
+});
+
+app.get("/saved", function(req, res) {
+  res.render("saved");
+}); 
+
 // A GET route for scraping the daily beast website
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with axios
