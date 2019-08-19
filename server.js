@@ -17,7 +17,6 @@ var PORT = 3000;
 // Initialize Express
 var app = express();
 
-// Configure middleware
 
 // Use morgan logger for logging requests
 app.use(logger("dev"));
@@ -36,8 +35,9 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-// Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/dailybeastpopulater", { useNewUrlParser: true });
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/dailybeastpopulater";
+
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // Routes
 app.get("/", function(req, res){
@@ -55,16 +55,16 @@ app.get("/scrape", function(req, res) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
 
-    // Now, we grab every h2 within an article tag, and do the following:
+    
     $("article a").each(function(i, element) {
       // Save an empty result object
       var result = {};
 
       // Add the text and href of every link, and save them as properties of the result object
-      result.title = $(this)
+      result.title = $(element)
         .children("h2")
         .text();
-      result.link = $(this)
+      result.link = $(element)
         .attr("href");
 
 
@@ -81,7 +81,7 @@ app.get("/scrape", function(req, res) {
     });
 
     // Send a message to the client
-    res.send("Scrape Complete");
+    res.render("scrape");
   });
 });
 

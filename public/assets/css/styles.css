@@ -1,16 +1,44 @@
 body {
     background-image: url("../images/advertisements-blur-commerce-518543.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div.header {
+    padding: 25px;
 }
 
 div.header h1 {
     color: white;
     font-size: 3.75rem;
     text-align: center;
+    font-family: 'Merriweather', serif;
 }
 
 div.header h2 {
     color: white;
     font-size: 1.75rem;
     text-align: center;
+    font-family: 'Merriweather', serif;
 }
+
+div#scrapedArticles {
+    margin: 0 auto;
+    width: 95%;
+    color: white;
+    background-color: rgba(221, 12, 12, 0.342);
+}
+
+div#scrapedArticles div#articleTitle {
+    padding: 10px;
+}
+
+div#scrapedArticles div#blurb {
+    background-color: white;
+    color: red;
+    padding: 5px;
+}
+
+
+
+
