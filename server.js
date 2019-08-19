@@ -35,7 +35,7 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-var MONGODB_URI = process.env.PORT || "mongodb://localhost/dailybeastpopulater";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/dailybeastpopulater";
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
