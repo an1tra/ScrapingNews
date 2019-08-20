@@ -15,6 +15,9 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 // Initialize Express
 var app = express();
 
+app.use(bodyParser.urlencoded({ extended: false })); //For body parser
+app.use(bodyParser.json());
+
 // Use morgan logger for logging requests
 app.use(logger("dev"));
 // Parse request body as JSON
