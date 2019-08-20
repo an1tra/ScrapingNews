@@ -1,8 +1,7 @@
-const axios = require('axios');
-const cheerio = require("cheerio");
-const mongoose = require("mongoose");
+var axios = require('axios');
+var cheerio = require("cheerio");
 // Require all models
-const db = require("../models");
+var db = require("../models");
 
 
 module.exports = function (app) {

@@ -1,7 +1,8 @@
 var express    = require('express'),
-    bodyParser = require('body-parser'),
-    exphbs     = require('express-handlebars'),
-    logger     = require("morgan");
+var bodyParser = require('body-parser'),
+var exphbs     = require('express-handlebars'),
+var logger     = require("morgan");
+var mongoose = require("mongoose");
 
 //var PORT = process.env.PORT || 8000;
 
