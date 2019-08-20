@@ -13,8 +13,8 @@
       <li class="nav-item">
         <a class="nav-link" href="/saved">Saved Articles</a>
       </li>
-      <li class="nav-item">
-        <a class="btn btn-sm btn-warning" style="margin-left: 5px;" href="#" role="button">Clear Articles</a>
+      <li class="nav-item"></li>
+        <button type="button" class="btn btn-xs btn-warning" style="margin-left: 5px;" onclick="clearDatabase()">Clear Articles</button>
       </li>
     </ul>
   </div>
@@ -25,20 +25,23 @@
   <h2>Your Saved Articles</h2>
 </div>
 
-
-<div id="scrapedArticles" class="rounded">
-  <div id="articleTitle">
-    <h1>Insert Article Title Here</h1>
+{{#each article}}
+<div class="scrapedArticles rounded">
+  <div class="articleTitle rounded">
+    <a class="anchorlink" href="{{this.link}}" target="_blank" rel="noopener noreferrer">
+      <h1>{{this.title}}</h1>
+    </a>
     <button id="myBtn" type="button" class="btn btn-xs btn-warning" data-toggle="modal" data-target="#myModal" 
     style="float:right; position:relative; bottom: 50px;">
     Article Notes</button>
     <button id="deleteNote" type="button" class="btn btn-xs btn-warning" style="float:right; 
     position:relative; bottom: 50px; margin-right: 5px;"> Delete From Saved</button>
   </div>
-  <div id="blurb" class="rounded">
-    <p>Insert Article Blurb Here</p>
+  <div class="blurb rounded">
+    <p>{{this.blurb}}</p>
   </div>
 </div>
+{{/each}}
 
 
 
@@ -53,8 +56,11 @@
         <button type="button" class="close" data-dismiss="modal" style="float: left;">&times;</button>
         <h4 class="modal-title">View Notes</h4>
       </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
+      <div class="view-notes">
+        <p>This is where the notes should be viewed.</p>
+      </div>
+      <div class="note-container">
+        <input type="text" name="inputNote" class="inputNote">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

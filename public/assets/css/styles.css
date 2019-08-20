@@ -22,23 +22,35 @@ div.header h2 {
     font-family: 'Merriweather', serif;
 }
 
-div#scrapedArticles {
+
+.scrapedArticles {
+    margin: 10px;
+}
+
+.articleTitle {
+    padding: 10px;
     margin: 0 auto;
     width: 95%;
     color: white;
     background-color: rgba(221, 12, 12, 0.342);
 }
 
-div#scrapedArticles div#articleTitle {
-    padding: 10px;
-}
-
-div#scrapedArticles div#blurb {
+.scrapedArticles .blurb {
     background-color: white;
     color: red;
     padding: 5px;
+    margin: 0 auto;
+    width: 95%;
 }
 
+.anchorlink {
+    color: white;
+}
 
+.blurb p {
+    font-weight: bold;
+}
 
-
+.inputNote {
+    width: 100%;
+}
