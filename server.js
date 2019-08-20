@@ -4,7 +4,7 @@ var exphbs     = require('express-handlebars');
 var logger     = require("morgan");
 var mongoose = require("mongoose");
 
-//var PORT = process.env.PORT || 8000;
+var PORT = process.env.PORT || 8000;
 
 // Connect to the Mongo DB
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
