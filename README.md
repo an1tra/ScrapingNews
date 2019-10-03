@@ -6,6 +6,9 @@ View deployed application here: https://glacial-savannah-45466.herokuapp.com/
 
 <h2>Technologies Used:</h2>
   <ul>
+  <li>HTML5</li>
+  <li>CSS3</li>
+  <li>JavaScript</li>
   <li>Axios</li>
   <li>Cheerio</li>
   <li>Express</li>
